@@ -83,8 +83,12 @@ def check_response(response):
             else:
                 raise TypeError('Объект homeworks не является списком')
         else:
-            error_logging(f'В ответе API отсутствует ключ {key}')
-            raise KeyError(f'В ответе API отсутствует ключ {key}')
+            error_logging(
+                f'В ответе API отсутствует ключ {settings.HOMEWORKS_KEY}'
+            )
+            raise KeyError(
+                f'В ответе API отсутствует ключ {settings.HOMEWORKS_KEY}'
+            )
     else:
         error_logging('Ответ API не приведен к типам данных Python')
         raise TypeError('Ответ API не приведен к типам данных Python')
